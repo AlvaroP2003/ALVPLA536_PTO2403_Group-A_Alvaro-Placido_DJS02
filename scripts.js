@@ -17,12 +17,13 @@ form.addEventListener("submit", (event) => {
     }
 
     if(isNaN(dividend) || isNaN(divider)) {
-      throw new Error('Non number character insterted')
+      throw new Error('Non numerical value insterted')
     }
 
     if(divider == 0) {
-      console.error('Error :' + new Error().stack)
-      result.innerText('Division not performed. Invalid number provided. Try again')
+      console.error('Invalid divider value: '+ new Error().stack)
+      result.innerText = 'Division not performed. Invalid number provided. Try again';
+      return
     }
 
 
